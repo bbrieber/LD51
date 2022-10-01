@@ -14,6 +14,10 @@ config/name="LD51"
 run/main_scene="res://src/scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+MusicManager="*res://src/Autoload/MusicManager.tscn"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

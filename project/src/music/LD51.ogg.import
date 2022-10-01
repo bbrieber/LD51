@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LD51.ogg-f05b1248ffa6a2d31e33a37c89f45a27.oggstr"
+
+[deps]
+
+source_file="res://src/music/LD51.ogg"
+dest_files=[ "res://.import/LD51.ogg-f05b1248ffa6a2d31e33a37c89f45a27.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
