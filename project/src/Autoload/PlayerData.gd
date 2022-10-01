@@ -10,6 +10,9 @@ signal points_changed
 signal try_count_changed
 signal health_changed
 
+
+signal player_died
+
 func reset_health():
 	self.health = max_health
 
@@ -24,4 +27,8 @@ func set_try_count(value: int) -> void:
 
 func set_health(value: int) -> void:
 	health = clamp(value,0,100)
+	
 	emit_signal("health_changed")
+	if health == 0:
+		emit_signal("player_died")
+	

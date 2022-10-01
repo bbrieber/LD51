@@ -12,13 +12,14 @@ onready var _model : Spatial = $PlayerModel
 
 func _ready() -> void:
 	TimerManager.connect("on_timer_over",self,"timer_over")
+	PlayerData.connect("player_died",self,"on_player_died")
 	PlayerData.reset_health()
 	TimerManager.reset_timer()
 
 func timer_over() -> void:
 	TimerManager.reset_timer()
 	print("Hatchi")
-	PlayerData.health += -10
+	PlayerData.health += -50
 
 func _physics_process(delta) -> void:
 	var move_direction := Vector3.ZERO
@@ -49,3 +50,7 @@ func _physics_process(delta) -> void:
 
 func _process(delta) -> void:
 	_spring_arm.translation = translation
+
+
+func on_player_died()->void:
+	SceneManager.load_death_screen()

@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://src/scripts/StartGameButton.gd" type="Script" id=1]
+[ext_resource path="res://src/scripts/LastLevelButton.gd" type="Script" id=1]
 
-[node name="ChangeSceneButton" type="Button"]
+[node name="RestartGameButton" type="Button"]
 margin_right = 188.0
 margin_bottom = 29.0
-text = "Start Game"
+text = "Restart Level"
 script = ExtResource( 1 )
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]

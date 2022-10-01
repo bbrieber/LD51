@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Autoload/SceneManager.gd" type="Script" id=1]
+
+[node name="SceneManager" type="Node"]
+script = ExtResource( 1 )
+path_to_menu_scene = "res://src/scenes/MainMenu.tscn"
+path_to_win_scene = "res://src/scenes/WinScene.tscn"
+path_to_die_scene = "res://src/scenes/DeathScene.tscn"
+path_to_levels_array = [ "res://src/scenes/MainScene.tscn", "res://src/scenes/MainScene2.tscn" ]

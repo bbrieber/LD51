@@ -25,9 +25,9 @@ func set_paused(value):
 	scene_tree.paused = value
 	pause_overlay.visible = value
 	if paused:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	if paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	
 func _on_continue_button_up():

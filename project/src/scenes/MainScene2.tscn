@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Environment/BoxObstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Assets/PickUp.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Assets/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Assets/Bed.tscn" type="PackedScene" id=5]
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 30, 0.1, 30 )
@@ -19,6 +19,7 @@ size = Vector3( 60, 0.2, 60 )
 [node name="Spatial" type="Spatial" parent="."]
 
 [node name="StaticBody" type="StaticBody" parent="Spatial"]
+collision_layer = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Spatial/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
@@ -30,15 +31,19 @@ mesh = SubResource( 2 )
 
 [node name="BoxObstacle" parent="Spatial" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7022, 0, 3.45129 )
+collision_layer = 2
 
 [node name="BoxObstacle2" parent="Spatial" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4081, 0, -3.20721 )
+collision_layer = 2
 
 [node name="BoxObstacle3" parent="Spatial" instance=ExtResource( 2 )]
 transform = Transform( 0.684025, 0, 0.729458, 0, 1, 0, -0.729458, 0, 0.684025, -12.4605, 0, 0.376341 )
+collision_layer = 2
 
 [node name="BoxObstacle4" parent="Spatial" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8474, 0, 0 )
+collision_layer = 2
 
 [node name="Player" parent="Spatial" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168753, 1.28218, 1.0088 )
@@ -46,5 +51,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168753, 1.28218, 1.0088 )
 [node name="PickUp" parent="Spatial" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.73029, 1.57356e-05, 11.2449 )
 
-[node name="Portal" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1.43123, 0, -1.58309, 0, 2.32586, 0, 0.741789, 0, 0.670634, 18.5197, 2.59876e-05, -12.647 )
+[node name="Bed" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9507, 3.33786e-06, -13.6786 )
