@@ -7,7 +7,7 @@ export var gravity := 50.0
 var _velocity := Vector3.ZERO
 var _snap_vector := Vector3.DOWN
 
-onready var _spring_arm : SpringArm = $SpringArm
+onready var _spring_arm : SpringArm = $CameraArm
 onready var _model : Spatial = $PlayerModel
 
 func _ready() -> void:
