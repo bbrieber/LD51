@@ -54,12 +54,18 @@ text = "Restart"
 [node name="MainMenu" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 5 )]
 margin_top = 66.0
 margin_bottom = 95.0
+text = "Main Menu"
 path_to_scene = "res://src/scenes/MainMenu.tscn"
 
 [node name="QuitGame" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 99.0
 margin_bottom = 128.0
 text = "Quit Game"
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+stretch_margin_left = 8
 
 [connection signal="button_up" from="PauseOverlay/VBoxContainer/ContinueButton" to="." method="_on_continue_button_up"]
 [connection signal="button_up" from="PauseOverlay/VBoxContainer/RestartButton" to="." method="_on_restart_button_up"]

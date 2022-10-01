@@ -17,6 +17,8 @@ config/icon="res://icon.png"
 [autoload]
 
 MusicManager="*res://src/Autoload/MusicManager.tscn"
+PlayerData="*res://src/Autoload/PlayerData.tscn"
+TimerManager="*res://src/Autoload/TimerManager.tscn"
 
 [gui]
 

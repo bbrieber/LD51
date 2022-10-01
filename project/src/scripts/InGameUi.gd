@@ -6,6 +6,13 @@ onready var pause_overlay: ColorRect = get_node("PauseOverlay")
 
 var paused : =false setget set_paused
 
+func _ready() -> void:
+	PlayerData.connect("health_changed",self,"_on_health_changed")
+
+func _on_health_changed() -> void:
+	print("Health %d" % PlayerData.health)
+
+
 func _unhandled_input(event):
 	if event.is_action("Pause") && event.is_pressed():
 		self.paused = !paused

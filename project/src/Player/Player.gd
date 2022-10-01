@@ -10,6 +10,16 @@ var _snap_vector := Vector3.DOWN
 onready var _spring_arm : SpringArm = $SpringArm
 onready var _model : Spatial = $PlayerModel
 
+func _ready() -> void:
+	TimerManager.connect("on_timer_over",self,"timer_over")
+	PlayerData.reset_health()
+	TimerManager.reset_timer()
+
+func timer_over() -> void:
+	TimerManager.reset_timer()
+	print("Hatchi")
+	PlayerData.health += -10
+
 func _physics_process(delta) -> void:
 	var move_direction := Vector3.ZERO
 	move_direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
