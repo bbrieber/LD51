@@ -3,6 +3,8 @@ extends Control
 onready var scene_tree: = get_tree()
 onready var pause_overlay: ColorRect = get_node("PauseOverlay")
 
+onready var health_bar: ProgressBar = get_node("Control/HealthBar")
+
 
 var paused : =false setget set_paused
 
@@ -11,7 +13,7 @@ func _ready() -> void:
 
 func _on_health_changed() -> void:
 	print("Health %d" % PlayerData.health)
-
+	health_bar.value = PlayerData.health
 
 func _unhandled_input(event):
 	if event.is_action("Pause") && event.is_pressed():

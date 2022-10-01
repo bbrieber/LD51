@@ -63,9 +63,22 @@ margin_bottom = 128.0
 text = "Quit Game"
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 stretch_margin_left = 8
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HealthBar" type="ProgressBar" parent="Control"]
+margin_left = 16.0
+margin_top = 25.0
+margin_right = 242.0
+margin_bottom = 48.0
+value = 30.0
+rounded = true
 
 [connection signal="button_up" from="PauseOverlay/VBoxContainer/ContinueButton" to="." method="_on_continue_button_up"]
 [connection signal="button_up" from="PauseOverlay/VBoxContainer/RestartButton" to="." method="_on_restart_button_up"]
