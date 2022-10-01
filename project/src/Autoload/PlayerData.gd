@@ -23,5 +23,5 @@ func set_try_count(value: int) -> void:
 
 
 func set_health(value: int) -> void:
-	health = value
+	health = clamp(value,0,100)
 	emit_signal("health_changed")
