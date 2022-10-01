@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://src/scenes/InGameUi.gd" type="Script" id=1]
+[ext_resource path="res://src/scripts/InGameUi.gd" type="Script" id=1]
 [ext_resource path="res://src/fonts/LD_Font_Label.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/themes/LD51_Theme.tres" type="Theme" id=3]
 [ext_resource path="res://src/UI/QuitGameButton.tscn" type="PackedScene" id=4]
