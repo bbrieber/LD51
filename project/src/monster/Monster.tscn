@@ -1,0 +1,141 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://src/monster/resources/Monster.glb" type="PackedScene" id=1]
+[ext_resource path="res://src/monster/MonsterSkin.material" type="Material" id=2]
+[ext_resource path="res://src/monster/MonsterEyes.material" type="Material" id=3]
+[ext_resource path="res://src/monster/CameraArm.gd" type="Script" id=4]
+[ext_resource path="res://src/monster/MonsterController.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.699932
+height = 1.10563
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "Hatschi_1"
+
+[sub_resource type="AnimationNodeOneShot" id=24]
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "Jump_Land"
+
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "Jump_Loop"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "Jump_Start"
+
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "Run"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=32]
+blend_point_0/node = SubResource( 29 )
+blend_point_0/pos = 0.2
+blend_point_1/node = SubResource( 30 )
+blend_point_1/pos = 1.4
+blend_point_2/node = SubResource( 31 )
+blend_point_2/pos = 4.2
+min_space = 0.0
+max_space = 4.2
+snap = 0.2
+value_label = "velocity"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+advance_condition = "is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+advance_condition = "is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+advance_condition = "is_on_ground"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+advance_condition = "is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+advance_condition = "is_in_air"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+advance_condition = "is_in_air"
+
+[sub_resource type="AnimationNodeStateMachine" id=35]
+states/Idle/node = SubResource( 25 )
+states/Idle/position = Vector2( 125.889, 58.3333 )
+states/Jump_Land/node = SubResource( 26 )
+states/Jump_Land/position = Vector2( 302.482, 340.333 )
+states/Jump_Loop/node = SubResource( 27 )
+states/Jump_Loop/position = Vector2( 376.556, 217 )
+states/Jump_Start/node = SubResource( 28 )
+states/Jump_Start/position = Vector2( 365.667, 59 )
+states/Move/node = SubResource( 32 )
+states/Move/position = Vector2( 63.6667, 216.333 )
+transitions = [ "Idle", "Move", SubResource( 33 ), "Move", "Idle", SubResource( 34 ), "Move", "Jump_Start", SubResource( 38 ), "Idle", "Jump_Start", SubResource( 39 ), "Jump_Start", "Jump_Loop", SubResource( 40 ), "Jump_Loop", "Jump_Land", SubResource( 41 ), "Jump_Land", "Move", SubResource( 42 ), "Jump_Land", "Idle", SubResource( 43 ), "Move", "Jump_Loop", SubResource( 44 ), "Idle", "Jump_Loop", SubResource( 45 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -108, 1 )
+
+[sub_resource type="AnimationNodeBlendTree" id=36]
+graph_offset = Vector2( -557.411, 88.643 )
+nodes/Anim_Hatschi_1/node = SubResource( 23 )
+nodes/Anim_Hatschi_1/position = Vector2( -413.333, 360 )
+nodes/hatschi_1/node = SubResource( 24 )
+nodes/hatschi_1/position = Vector2( -66.6667, 146.667 )
+nodes/locomotion/node = SubResource( 35 )
+nodes/locomotion/position = Vector2( -426.667, 146.667 )
+nodes/output/position = Vector2( 426.667, 146.667 )
+node_connections = [ "hatschi_1", 0, "locomotion", "hatschi_1", 1, "Anim_Hatschi_1", "output", 0, "hatschi_1" ]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=37]
+
+[node name="Monster" instance=ExtResource( 1 )]
+collision_mask = 7
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.25706, 0 )
+shape = SubResource( 1 )
+
+[node name="MonsterSkin" parent="MonsterSkeleton/Skeleton" index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="MonsterEyes" parent="MonsterSkeleton/Skeleton" index="1"]
+material/0 = ExtResource( 3 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
+tree_root = SubResource( 36 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/hatschi_1/active = false
+parameters/locomotion/playback = SubResource( 37 )
+parameters/locomotion/conditions/is_idle = true
+parameters/locomotion/conditions/is_in_air = false
+parameters/locomotion/conditions/is_moving = false
+parameters/locomotion/conditions/is_on_ground = true
+parameters/locomotion/Move/blend_position = 0
+
+[node name="CameraBoom" type="SpringArm" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 0.864126, 0.503276, 0, -0.503276, 0.864126, 0, 2, 0 )
+spring_length = 8.0
+margin = 0.25
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera" parent="CameraBoom" index="0"]

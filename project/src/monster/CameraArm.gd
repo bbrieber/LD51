@@ -5,7 +5,7 @@ extends SpringArm
 export var mouse_sensitivity := 0.05
 
 func _ready() ->void:
-	set_as_toplevel(true)
+	#set_as_toplevel(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 

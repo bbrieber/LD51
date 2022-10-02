@@ -2,9 +2,9 @@
 
 [ext_resource path="res://src/scenes/InGameUi.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Environment/BoxObstacle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/monster/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Assets/PickUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Assets/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/monster/Monster.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 30, 0.1, 30 )
@@ -40,11 +40,11 @@ transform = Transform( 0.684025, 0, 0.729458, 0, 1, 0, -0.729458, 0, 0.684025, -
 [node name="BoxObstacle4" parent="Spatial" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8474, 0, 0 )
 
-[node name="Player" parent="Spatial" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168753, 1.28218, 1.0088 )
-
 [node name="PickUp" parent="Spatial" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.73029, 1.57356e-05, 11.2449 )
+
+[node name="Monster" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
 
 [node name="Portal" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1.43123, 0, -1.58309, 0, 2.32586, 0, 0.741789, 0, 0.670634, 18.5197, 2.59876e-05, -12.647 )

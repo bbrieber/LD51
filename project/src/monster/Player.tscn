@@ -3,7 +3,6 @@
 [ext_resource path="res://src/monster/CameraArm.gd" type="Script" id=1]
 [ext_resource path="res://src/monster/PlayerController.gd" type="Script" id=2]
 
-
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
 height = 1.5
@@ -32,6 +31,7 @@ skeleton = NodePath("../..")
 
 [node name="MeshInstance" type="MeshInstance" parent="PlayerModel/PlayerSkin"]
 transform = Transform( 0.142047, 0, 0, 0, 0.120539, -0.0577754, 0, 0.0714144, 0.0975179, 0, -0.499667, -0.476331 )
+visible = false
 mesh = SubResource( 3 )
 
 [node name="CameraArm" type="SpringArm" parent="."]

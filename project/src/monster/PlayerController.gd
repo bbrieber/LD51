@@ -43,7 +43,8 @@ func _physics_process(delta) -> void:
 	_velocity = move_and_slide_with_snap(_velocity,_snap_vector,Vector3.UP,true)
 	
 	
-	if _velocity.length() > 0.2:
+	if _velocity.length() > 0.2 and not is_jumping :
+		print("Set")
 		var look_direction = Vector2(_velocity.z, _velocity.x)
 		_model.rotation.y = look_direction.angle()
 	

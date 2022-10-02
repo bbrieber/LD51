@@ -1,0 +1,97 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=24 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Hatschi_1"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Jump_Land"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "Jump_Loop"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "Jump_Start"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Run"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=5]
+blend_point_0/node = SubResource( 2 )
+blend_point_0/pos = 0.2
+blend_point_1/node = SubResource( 3 )
+blend_point_1/pos = 1.4
+blend_point_2/node = SubResource( 4 )
+blend_point_2/pos = 4.2
+min_space = 0.0
+max_space = 4.2
+snap = 0.2
+value_label = "velocity"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+auto_advance = true
+advance_condition = "is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+auto_advance = true
+advance_condition = "not is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+auto_advance = true
+advance_condition = "is_on_ground"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+auto_advance = true
+advance_condition = "is_moving"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+auto_advance = true
+advance_condition = "is_falling"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+advance_condition = "is_falling"
+
+[resource]
+states/Hatschi_1/node = SubResource( 6 )
+states/Hatschi_1/position = Vector2( 141, 358.296 )
+states/Idle/node = SubResource( 7 )
+states/Idle/position = Vector2( 135.222, 182.327 )
+states/Jump_Land/node = SubResource( 8 )
+states/Jump_Land/position = Vector2( 636.667, 334.444 )
+states/Jump_Loop/node = SubResource( 9 )
+states/Jump_Loop/position = Vector2( 686, 58.1344 )
+states/Jump_Start/node = SubResource( 10 )
+states/Jump_Start/position = Vector2( 325.667, 9 )
+states/Locomotion/node = SubResource( 5 )
+states/Locomotion/position = Vector2( 416.333, 188.778 )
+transitions = [ "Idle", "Locomotion", SubResource( 11 ), "Locomotion", "Idle", SubResource( 12 ), "Jump_Loop", "Jump_Land", SubResource( 13 ), "Jump_Land", "Locomotion", SubResource( 15 ), "Locomotion", "Jump_Start", SubResource( 16 ), "Locomotion", "Jump_Loop", SubResource( 17 ), "Idle", "Hatschi_1", SubResource( 18 ), "Locomotion", "Hatschi_1", SubResource( 19 ), "Jump_Land", "Hatschi_1", SubResource( 20 ), "Hatschi_1", "Idle", SubResource( 23 ), "Jump_Land", "Idle", SubResource( 24 ), "Idle", "Jump_Start", SubResource( 25 ), "Jump_Start", "Jump_Loop", SubResource( 26 ), "Idle", "Jump_Loop", SubResource( 27 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -31, -14 )
