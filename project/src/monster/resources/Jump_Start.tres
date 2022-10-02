@@ -3,6 +3,7 @@
 [resource]
 resource_name = "Jump_Start"
 length = 0.458333
+step = 0.065
 tracks/0/type = "transform"
 tracks/0/path = NodePath("MonsterSkeleton/Skeleton:D_Antenna4")
 tracks/0/interp = 1
@@ -367,3 +368,31 @@ tracks/51/loop_wrap = true
 tracks/51/imported = true
 tracks/51/enabled = true
 tracks/51/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.458333, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/52/type = "method"
+tracks/52/path = NodePath("RandomSoudPlayer")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_random_yah"
+} ]
+}
+tracks/53/type = "method"
+tracks/53/path = NodePath(".")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/keys = {
+"times": PoolRealArray( 0.26 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "set_jump_trigger"
+} ]
+}

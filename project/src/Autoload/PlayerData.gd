@@ -11,6 +11,9 @@ signal try_count_changed
 signal health_changed
 
 
+signal medizine_taken
+
+
 signal player_died
 
 func reset_health():
@@ -32,3 +35,6 @@ func set_health(value: int) -> void:
 	if health == 0:
 		emit_signal("player_died")
 	
+
+func trigger_med_taken() -> void:
+	emit_signal("medizine_taken")

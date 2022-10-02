@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sick_1.ogg-8c7ba8df4f3664b30157cdd744d745c6.oggstr"
+
+[deps]
+
+source_file="res://src/monster/Audio/Sick_1.ogg"
+dest_files=[ "res://.import/Sick_1.ogg-8c7ba8df4f3664b30157cdd744d745c6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

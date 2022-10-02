@@ -1,10 +1,38 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://src/monster/resources/Monster.glb" type="PackedScene" id=1]
 [ext_resource path="res://src/monster/MonsterSkin.material" type="Material" id=2]
 [ext_resource path="res://src/monster/MonsterEyes.material" type="Material" id=3]
 [ext_resource path="res://src/monster/CameraArm.gd" type="Script" id=4]
 [ext_resource path="res://src/monster/MonsterController.gd" type="Script" id=5]
+[ext_resource path="res://src/monster/Audio/Footsteps_5.ogg" type="AudioStream" id=6]
+[ext_resource path="res://src/monster/RandomSoundPlayer.gd" type="Script" id=7]
+[ext_resource path="res://src/monster/Audio/Ahh_4.ogg" type="AudioStream" id=8]
+[ext_resource path="res://src/monster/Audio/Ahh_3.ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/monster/Audio/Ahh_1.ogg" type="AudioStream" id=10]
+[ext_resource path="res://src/monster/Audio/Ahh_2.ogg" type="AudioStream" id=11]
+[ext_resource path="res://src/monster/Audio/Footsteps_6.ogg" type="AudioStream" id=12]
+[ext_resource path="res://src/monster/Audio/Footsteps_7.ogg" type="AudioStream" id=13]
+[ext_resource path="res://src/monster/Audio/Footsteps_8.ogg" type="AudioStream" id=14]
+[ext_resource path="res://src/monster/Audio/Footsteps_1.ogg" type="AudioStream" id=15]
+[ext_resource path="res://src/monster/Audio/Footsteps_4.ogg" type="AudioStream" id=16]
+[ext_resource path="res://src/monster/Audio/Footsteps_2.ogg" type="AudioStream" id=17]
+[ext_resource path="res://src/monster/Audio/Footsteps_3.ogg" type="AudioStream" id=18]
+[ext_resource path="res://src/monster/Audio/Yah_5.ogg" type="AudioStream" id=19]
+[ext_resource path="res://src/monster/Audio/Yah_2.ogg" type="AudioStream" id=20]
+[ext_resource path="res://src/monster/Audio/Yah_3.ogg" type="AudioStream" id=21]
+[ext_resource path="res://src/monster/Audio/Yah_4.ogg" type="AudioStream" id=22]
+[ext_resource path="res://src/monster/Audio/Yah_1.ogg" type="AudioStream" id=23]
+[ext_resource path="res://src/monster/Audio/Chi_1.ogg" type="AudioStream" id=24]
+[ext_resource path="res://src/monster/Audio/Chi_2.ogg" type="AudioStream" id=25]
+[ext_resource path="res://src/monster/Audio/Chi_4.ogg" type="AudioStream" id=26]
+[ext_resource path="res://src/monster/Audio/Chi_5.ogg" type="AudioStream" id=27]
+[ext_resource path="res://src/monster/Audio/Chi_3.ogg" type="AudioStream" id=28]
+[ext_resource path="res://src/monster/Audio/ha_4.ogg" type="AudioStream" id=29]
+[ext_resource path="res://src/monster/Audio/ha_1.ogg" type="AudioStream" id=30]
+[ext_resource path="res://src/monster/Audio/ha_2.ogg" type="AudioStream" id=31]
+[ext_resource path="res://src/monster/Audio/ha_3.ogg" type="AudioStream" id=32]
+[ext_resource path="res://src/monster/Audio/ha_5.ogg" type="AudioStream" id=33]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.699932
@@ -13,7 +41,35 @@ height = 1.10563
 [sub_resource type="AnimationNodeAnimation" id=23]
 animation = "Hatschi_1"
 
+[sub_resource type="AnimationNodeAnimation" id=46]
+animation = "Hatschi_2"
+
+[sub_resource type="AnimationNodeAnimation" id=47]
+animation = "Hatschi_3"
+
+[sub_resource type="AnimationNodeAnimation" id=50]
+animation = "Sick"
+
+[sub_resource type="AnimationNodeAnimation" id=51]
+animation = "Sick_Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=52]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=53]
+states/Sick/node = SubResource( 50 )
+states/Sick/position = Vector2( 219.667, 175.889 )
+states/Sick_Idle/node = SubResource( 51 )
+states/Sick_Idle/position = Vector2( 444.333, 176.333 )
+transitions = [ "Sick", "Sick_Idle", SubResource( 52 ) ]
+start_node = "Sick"
+
 [sub_resource type="AnimationNodeOneShot" id=24]
+
+[sub_resource type="AnimationNodeOneShot" id=48]
+
+[sub_resource type="AnimationNodeOneShot" id=49]
 
 [sub_resource type="AnimationNodeAnimation" id=25]
 animation = "Idle"
@@ -63,7 +119,6 @@ switch_mode = 2
 auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=41]
-advance_condition = "is_on_ground"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=42]
 advance_condition = "is_moving"
@@ -78,37 +133,57 @@ advance_condition = "is_in_air"
 [sub_resource type="AnimationNodeStateMachineTransition" id=45]
 advance_condition = "is_in_air"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+advance_condition = "is_on_ground"
+
 [sub_resource type="AnimationNodeStateMachine" id=35]
 states/Idle/node = SubResource( 25 )
-states/Idle/position = Vector2( 125.889, 58.3333 )
+states/Idle/position = Vector2( 77.889, 58.3333 )
 states/Jump_Land/node = SubResource( 26 )
-states/Jump_Land/position = Vector2( 302.482, 340.333 )
+states/Jump_Land/position = Vector2( 229.815, 446.333 )
 states/Jump_Loop/node = SubResource( 27 )
-states/Jump_Loop/position = Vector2( 376.556, 217 )
+states/Jump_Loop/position = Vector2( 349.223, 217.815 )
 states/Jump_Start/node = SubResource( 28 )
 states/Jump_Start/position = Vector2( 365.667, 59 )
 states/Move/node = SubResource( 32 )
 states/Move/position = Vector2( 63.6667, 216.333 )
-transitions = [ "Idle", "Move", SubResource( 33 ), "Move", "Idle", SubResource( 34 ), "Move", "Jump_Start", SubResource( 38 ), "Idle", "Jump_Start", SubResource( 39 ), "Jump_Start", "Jump_Loop", SubResource( 40 ), "Jump_Loop", "Jump_Land", SubResource( 41 ), "Jump_Land", "Move", SubResource( 42 ), "Jump_Land", "Idle", SubResource( 43 ), "Move", "Jump_Loop", SubResource( 44 ), "Idle", "Jump_Loop", SubResource( 45 ) ]
+transitions = [ "Idle", "Move", SubResource( 33 ), "Move", "Idle", SubResource( 34 ), "Move", "Jump_Start", SubResource( 38 ), "Idle", "Jump_Start", SubResource( 39 ), "Jump_Start", "Jump_Loop", SubResource( 40 ), "Jump_Loop", "Jump_Land", SubResource( 41 ), "Jump_Land", "Move", SubResource( 42 ), "Jump_Land", "Idle", SubResource( 43 ), "Move", "Jump_Loop", SubResource( 44 ), "Idle", "Jump_Loop", SubResource( 45 ), "Jump_Loop", "Idle", SubResource( 56 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -108, 1 )
+graph_offset = Vector2( -403, -16 )
+
+[sub_resource type="AnimationNodeBlend2" id=55]
 
 [sub_resource type="AnimationNodeBlendTree" id=36]
-graph_offset = Vector2( -557.411, 88.643 )
+graph_offset = Vector2( -608.989, 39.3925 )
 nodes/Anim_Hatschi_1/node = SubResource( 23 )
-nodes/Anim_Hatschi_1/position = Vector2( -413.333, 360 )
+nodes/Anim_Hatschi_1/position = Vector2( -520, 426.667 )
+nodes/Anim_Hatschi_2/node = SubResource( 46 )
+nodes/Anim_Hatschi_2/position = Vector2( -200, 440 )
+nodes/Anim_Hatschi_3/node = SubResource( 47 )
+nodes/Anim_Hatschi_3/position = Vector2( 13.3333, 440 )
+nodes/DeathMachine/node = SubResource( 53 )
+nodes/DeathMachine/position = Vector2( 266.667, 453.333 )
 nodes/hatschi_1/node = SubResource( 24 )
-nodes/hatschi_1/position = Vector2( -66.6667, 146.667 )
+nodes/hatschi_1/position = Vector2( -160, 133.333 )
+nodes/hatschi_2/node = SubResource( 48 )
+nodes/hatschi_2/position = Vector2( 53.3333, 160 )
+nodes/hatschi_3/node = SubResource( 49 )
+nodes/hatschi_3/position = Vector2( 266.667, 173.333 )
 nodes/locomotion/node = SubResource( 35 )
-nodes/locomotion/position = Vector2( -426.667, 146.667 )
-nodes/output/position = Vector2( 426.667, 146.667 )
-node_connections = [ "hatschi_1", 0, "locomotion", "hatschi_1", 1, "Anim_Hatschi_1", "output", 0, "hatschi_1" ]
+nodes/locomotion/position = Vector2( -506.667, 133.333 )
+nodes/output/position = Vector2( 826.667, 160 )
+nodes/sick_blend/node = SubResource( 55 )
+nodes/sick_blend/position = Vector2( 546.667, 146.667 )
+node_connections = [ "hatschi_2", 0, "hatschi_1", "hatschi_2", 1, "Anim_Hatschi_2", "hatschi_1", 0, "locomotion", "hatschi_1", 1, "Anim_Hatschi_1", "hatschi_3", 0, "hatschi_2", "hatschi_3", 1, "Anim_Hatschi_3", "sick_blend", 0, "hatschi_3", "sick_blend", 1, "DeathMachine", "output", 0, "sick_blend" ]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=54]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=37]
 
 [node name="Monster" instance=ExtResource( 1 )]
 collision_mask = 7
 script = ExtResource( 5 )
+speed = 8.0
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.25706, 0 )
@@ -120,17 +195,24 @@ material/0 = ExtResource( 2 )
 [node name="MonsterEyes" parent="MonsterSkeleton/Skeleton" index="1"]
 material/0 = ExtResource( 3 )
 
+[node name="AnimationPlayer" parent="." index="2"]
+method_call_mode = 1
+
 [node name="AnimationTree" type="AnimationTree" parent="." index="3"]
 tree_root = SubResource( 36 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
+parameters/DeathMachine/playback = SubResource( 54 )
 parameters/hatschi_1/active = false
+parameters/hatschi_2/active = false
+parameters/hatschi_3/active = false
 parameters/locomotion/playback = SubResource( 37 )
 parameters/locomotion/conditions/is_idle = true
 parameters/locomotion/conditions/is_in_air = false
 parameters/locomotion/conditions/is_moving = false
 parameters/locomotion/conditions/is_on_ground = true
 parameters/locomotion/Move/blend_position = 0
+parameters/sick_blend/blend_amount = 0
 
 [node name="CameraBoom" type="SpringArm" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 0.864126, 0.503276, 0, -0.503276, 0.864126, 0, 2, 0 )
@@ -139,3 +221,16 @@ margin = 0.25
 script = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="CameraBoom" index="0"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]
+stream = ExtResource( 10 )
+
+[node name="RandomSoudPlayer" type="Spatial" parent="." index="6"]
+script = ExtResource( 7 )
+ahh_souds = [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 8 ) ]
+footstep_sounds = [ ExtResource( 15 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 6 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ]
+yah_sounds = [ ExtResource( 23 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 19 ) ]
+ha_sounds = [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 33 ) ]
+chi_sounds = [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 27 ) ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]

@@ -4,6 +4,7 @@
 resource_name = "Run"
 length = 0.875
 loop = true
+step = 0.0
 tracks/0/type = "transform"
 tracks/0/path = NodePath("MonsterSkeleton/Skeleton:D_Antenna4")
 tracks/0/interp = 1
@@ -368,3 +369,20 @@ tracks/51/loop_wrap = true
 tracks/51/imported = true
 tracks/51/enabled = true
 tracks/51/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.875, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/52/type = "method"
+tracks/52/path = NodePath("RandomSoudPlayer")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
+"times": PoolRealArray( 0.142271, 0.517607 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_random_footstep"
+}, {
+"args": [  ],
+"method": "play_random_footstep"
+} ]
+}

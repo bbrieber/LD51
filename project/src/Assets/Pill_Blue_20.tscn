@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Assets/PickUp.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Assets/SM_Blue_Pill.tres" type="ArrayMesh" id=2]
+[ext_resource path="res://src/Assets/M_flat_colors.material" type="Material" id=3]
+
+[node name="Pill_Blue_20" instance=ExtResource( 1 )]
+health_amount = 20
+
+[node name="MeshInstance" parent="Area/Spatial" index="0"]
+transform = Transform( 0.25, 0, 0, 0, 0.226577, -0.105655, 0, 0.105655, 0.226577, 0, 0, 0 )
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 3 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "RESET"

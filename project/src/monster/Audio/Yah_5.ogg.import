@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Yah_5.ogg-b1b1bdd32bb9c86b0646ae089b59a30f.oggstr"
+
+[deps]
+
+source_file="res://src/monster/Audio/Yah_5.ogg"
+dest_files=[ "res://.import/Yah_5.ogg-b1b1bdd32bb9c86b0646ae089b59a30f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

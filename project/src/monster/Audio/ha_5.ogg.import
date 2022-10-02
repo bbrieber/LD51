@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ha_5.ogg-d7778de7fe2cbbd03b1d450f713d097e.oggstr"
+
+[deps]
+
+source_file="res://src/monster/Audio/ha_5.ogg"
+dest_files=[ "res://.import/ha_5.ogg-d7778de7fe2cbbd03b1d450f713d097e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

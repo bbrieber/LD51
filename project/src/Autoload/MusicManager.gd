@@ -5,9 +5,8 @@ onready var music_player: AudioStreamPlayer = get_node("MusicPlayer")
 export var sound_file_path : String = ""
 var music = preload("res://src/music/LD51.ogg")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
+
 
 
 # Called when the node enters the scene tree for the first time.
