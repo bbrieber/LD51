@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Assets/SM_Green_Pill.tres" type="ArrayMesh" id=2]
 
 [node name="Pill_Green_100" instance=ExtResource( 1 )]
-health_amount = 50
+health_amount = 10
 
 [node name="MeshInstance" parent="Area/Spatial" index="0"]
 transform = Transform( 0.25, 0, 0, 0, 0.226577, -0.105655, 0, 0.105655, 0.226577, 0, 0, 0 )

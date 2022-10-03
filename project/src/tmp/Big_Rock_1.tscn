@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/tmp/Rocks.material" type="Material" id=1]
+[ext_resource path="res://src/tmp/Big_Rock_1.glb" type="PackedScene" id=2]
+
+[node name="Big_Rock_1" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+
+[node name="Big_Rock_1" parent="." index="0"]
+material/0 = ExtResource( 1 )
+
+[node name="Big_Rock_2" parent="." index="1"]
+collision_layer = 2

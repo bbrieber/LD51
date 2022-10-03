@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/scripts/InGameUi.gd" type="Script" id=1]
 [ext_resource path="res://src/fonts/LD_Font_Label.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/themes/LD51_Theme.tres" type="Theme" id=3]
 [ext_resource path="res://src/UI/QuitGameButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UI/MainMenuButton.tscn" type="PackedScene" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.337255, 0.329412, 0.329412, 0.552941 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [node name="InGameUi" type="Control"]
 pause_mode = 2
@@ -76,6 +83,25 @@ margin_right = 242.0
 margin_bottom = 48.0
 value = 30.0
 rounded = true
+
+[node name="TutorialPanel" type="Panel" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -197.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="TutorialText" type="Label" parent="TutorialPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+text = "
+ "
+autowrap = true
 
 [connection signal="button_up" from="PauseOverlay/VBoxContainer/ContinueButton" to="." method="_on_continue_button_up"]
 [connection signal="button_up" from="PauseOverlay/VBoxContainer/RestartButton" to="." method="_on_restart_button_up"]

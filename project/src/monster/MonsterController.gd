@@ -40,8 +40,6 @@ func timer_over() -> void:
 	print(actual_hatchi_path)
 	animation_tree.set(actual_hatchi_path,true)
 	
-	TimerManager.reset_timer()
-	PlayerData.health -= tick_damage
 
 func _physics_process(delta) -> void:
 	var move_direction := Vector3.ZERO
@@ -84,6 +82,7 @@ func set_jump_trigger()->void:
 func block_movement():
 	_movement_blocked = true
 	print("block_movement")
+	
 func free_movement():
 	_movement_blocked = false
 	print("free_movement")
@@ -98,6 +97,9 @@ func on_player_died()->void:
 	#SceneManager.load_death_screen()
 	
 	
+func trigger_health_loss():	
+	TimerManager.reset_timer()
+	PlayerData.health -= tick_damage
 	
 #State machine Calls	
 func set_is_in_air(value):
@@ -130,4 +132,8 @@ func init_death() -> void:
 	self.add_child(t)
 	t.start()
 	yield(t, "timeout")
+	SceneManager.load_death_screen()
+	
+func immediate_death(body) -> void:
+	
 	SceneManager.load_death_screen()

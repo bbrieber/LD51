@@ -1,0 +1,545 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://src/tmp/Platform_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/monster/Monster.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scenes/InGameUi.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/tmp/Moving_platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Assets/Pill_Green_100.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Assets/Portal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Assets/Pill_Red_50.tscn" type="PackedScene" id=7]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 300, 5, 800 )
+
+[sub_resource type="Curve3D" id=2]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, -0.677781, 108.927 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=22]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.677781, 112.971 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "CloudPath"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Path/PathFollow:unit_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Curve3D" id=5]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 64, -1, 65, 0, 0, 0, 0, 0, 0, 63, -1, 116 ),
+"tilts": PoolRealArray( 0, 0, 0, 0 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "CloudPath"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Path/PathFollow:unit_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Curve3D" id=8]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 0 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=21]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.202606, 72.6961 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "CloudPath"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Path/PathFollow:unit_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "CloudPath"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Path/PathFollow:unit_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Curve3D" id=13]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29.1261, 0.340515 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "CloudPath"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Path/PathFollow:unit_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "CloudPath"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Path/PathFollow:unit_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Curve3D" id=18]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -69.1875, 0.000488281 ),
+"tilts": PoolRealArray( 0, 0 )
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "CloudPath"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Path/PathFollow:unit_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[node name="Cloud_level" type="Spatial"]
+
+[node name="InGameUi" parent="." instance=ExtResource( 3 )]
+
+[node name="Monster" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5 )
+
+[node name="OutOfBounds" type="Spatial" parent="."]
+
+[node name="Area" type="Area" parent="OutOfBounds"]
+collision_layer = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="OutOfBounds/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -33.6117, 184.053 )
+shape = SubResource( 1 )
+
+[node name="Area_1" type="Spatial" parent="."]
+
+[node name="Platform_1" parent="Area_1" instance=ExtResource( 1 )]
+transform = Transform( -2.20817, 0, -9.75315, 0, 10, 0, 9.75315, 0, -2.20817, 0, -1.26264, 0 )
+
+[node name="Spatial" parent="Area_1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.32222, 10.0734 )
+time_per_cycle = 20.0
+loop = false
+enable_on_enter = true
+
+[node name="Path" parent="Area_1/Spatial" index="1"]
+curve = SubResource( 2 )
+
+[node name="Platform_2" parent="Area_1" instance=ExtResource( 1 )]
+transform = Transform( -2.20817, 0, -9.75315, 0, 10, 0, 9.75315, 0, -2.20817, 0, -1.26264, 130 )
+
+[node name="Spatial2" parent="Area_1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.32222, 138.029 )
+time_per_cycle = 20.0
+
+[node name="Path" parent="Area_1/Spatial2" index="1"]
+curve = SubResource( 22 )
+
+[node name="AnimationPlayer" parent="Area_1/Spatial2" index="2"]
+anims/CloudPath = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="Area_2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 260 )
+
+[node name="Platform_2" parent="Area_2" instance=ExtResource( 1 )]
+transform = Transform( -2.20817, 0, -9.75315, 0, 10, 0, 9.75315, 0, -2.20817, 0, -1.263, 0 )
+
+[node name="Pill_Green_100" parent="Area_2/Platform_2" instance=ExtResource( 5 )]
+transform = Transform( 0.1, 0, 1.86265e-09, 0, 0.1, 0, -1.86265e-09, 0, 0.1, 0, 0.3, 0 )
+health_amount = 100
+
+[node name="MovingPlatform" parent="Area_2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 8 )
+time_per_cycle = 20.0
+enable_on_enter = true
+
+[node name="Path" parent="Area_2/MovingPlatform" index="1"]
+curve = SubResource( 5 )
+
+[node name="PathFollow" parent="Area_2/MovingPlatform/Path" index="0"]
+transform = Transform( 0.194735, 0.963768, 0.182285, -0.913832, 0.245787, -0.323265, -0.356356, -0.103627, 0.928586, 0, 0, 0 )
+
+[node name="Platform_3" parent="Area_2" instance=ExtResource( 1 )]
+transform = Transform( -2.20817, 0, -9.75315, 0, 10, 0, 9.75315, 0, -2.20817, 64.6871, -2.263, 133 )
+
+[node name="MovingPlatform2" parent="Area_2" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 129, -1, 256 )
+time_per_cycle = 20.0
+enable_on_enter = true
+
+[node name="KinematicBody" parent="Area_2/MovingPlatform2" index="0"]
+transform = Transform( 1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1, 0, 0, 0 )
+
+[node name="Path" parent="Area_2/MovingPlatform2" index="1"]
+curve = SubResource( 5 )
+
+[node name="AnimationPlayer" parent="Area_2/MovingPlatform2" index="2"]
+anims/CloudPath = SubResource( 6 )
+anims/RESET = SubResource( 7 )
+
+[node name="Platform_4" parent="Area_2" instance=ExtResource( 1 )]
+transform = Transform( -2.20817, 0, -9.75315, 0, 10, 0, 9.75315, 0, -2.20817, 129.687, -2.263, 271 )
+
+[node name="Pill_Green_100" parent="Area_2/Platform_4" instance=ExtResource( 5 )]
+transform = Transform( 0.1, 0, 1.86265e-09, 0, 0.1, 0, -1.86265e-09, 0, 0.1, 0, 0.3, 0 )
+health_amount = 100
+
+[node name="Area_3" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 129, -1, 543 )
+
+[node name="MovingPlatform" parent="Area_3" instance=ExtResource( 4 )]
+enable_on_enter = true
+
+[node name="Path" parent="Area_3/MovingPlatform" index="1"]
+curve = SubResource( 8 )
+
+[node name="MovingPlatform2" parent="Area_3" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.52588e-05, 31.2026, 76.6961 )
+
+[node name="KinematicBody" parent="Area_3/MovingPlatform2" index="0"]
+transform = Transform( 1, 0, -2.08616e-07, 0, 1, 0, 2.08616e-07, 0, 1, 0, 0, 0 )
+
+[node name="Path" parent="Area_3/MovingPlatform2" index="1"]
+curve = SubResource( 21 )
+
+[node name="AnimationPlayer" parent="Area_3/MovingPlatform2" index="2"]
+anims/CloudPath = SubResource( 9 )
+anims/RESET = SubResource( 10 )
+
+[node name="CollisionShape" parent="Area_3/MovingPlatform2/Area" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.147003, 0.778902, 1 )
+
+[node name="MovingPlatform3" parent="Area_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31, 79.0487 )
+
+[node name="AnimationPlayer" parent="Area_3/MovingPlatform3" index="2"]
+anims/CloudPath = SubResource( 11 )
+anims/RESET = SubResource( 12 )
+
+[node name="MovingPlatform4" parent="Area_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.873899, 143.659 )
+
+[node name="Path" parent="Area_3/MovingPlatform4" index="1"]
+curve = SubResource( 13 )
+
+[node name="AnimationPlayer" parent="Area_3/MovingPlatform4" index="2"]
+anims/CloudPath = SubResource( 14 )
+anims/RESET = SubResource( 15 )
+
+[node name="Pill_Red_50" parent="Area_3" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 36, 78 )
+
+[node name="MovingPlatform5" parent="Area_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 147.454 )
+
+[node name="AnimationPlayer" parent="Area_3/MovingPlatform5" index="2"]
+anims/CloudPath = SubResource( 16 )
+anims/RESET = SubResource( 17 )
+
+[node name="MovingPlatform6" parent="Area_3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 70.1875, 215 )
+
+[node name="KinematicBody" parent="Area_3/MovingPlatform6" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+
+[node name="Path" parent="Area_3/MovingPlatform6" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+curve = SubResource( 18 )
+
+[node name="AnimationPlayer" parent="Area_3/MovingPlatform6" index="2"]
+anims/CloudPath = SubResource( 19 )
+anims/RESET = SubResource( 20 )
+
+[node name="Platform_5" parent="Area_3" instance=ExtResource( 1 )]
+transform = Transform( -2.20817, 0, -9.75315, 0, 10, 0, 9.75315, 0, -2.20817, 0.687103, 69.737, 231 )
+
+[node name="Portal" parent="Area_3/Platform_5" instance=ExtResource( 6 )]
+transform = Transform( 0.12941, 0, -0.482963, 0, 0.5, 0, 0.482963, 0, 0.12941, 0.487656, -0.0999999, -0.110413 )
+
+[node name="Pill_Green_100" parent="Area_3/Platform_5" instance=ExtResource( 5 )]
+transform = Transform( 0.1, 0, 1.86265e-09, 0, 0.1, 0, -1.86265e-09, 0, 0.1, -0.487671, 0.3, 0.110405 )
+
+[connection signal="body_entered" from="OutOfBounds/Area" to="Monster" method="immediate_death"]
+[connection signal="body_entered" from="Area_1/Spatial/Area" to="Area_1/Spatial2" method="enable"]
+[connection signal="body_entered" from="Area_2/MovingPlatform/Area" to="Area_2/MovingPlatform2" method="enable"]
+[connection signal="body_entered" from="Area_3/MovingPlatform/Area" to="Area_3/MovingPlatform2" method="enable"]
+[connection signal="body_entered" from="Area_3/MovingPlatform/Area" to="Area_3/MovingPlatform3" method="enable"]
+[connection signal="body_entered" from="Area_3/MovingPlatform/Area" to="Area_3/MovingPlatform4" method="enable"]
+[connection signal="body_entered" from="Area_3/MovingPlatform/Area" to="Area_3/MovingPlatform5" method="enable"]
+[connection signal="body_entered" from="Area_3/MovingPlatform/Area" to="Area_3/MovingPlatform6" method="enable"]
+
+[editable path="Area_1/Spatial"]
+[editable path="Area_1/Spatial2"]
+[editable path="Area_2/MovingPlatform"]
+[editable path="Area_2/MovingPlatform2"]
+[editable path="Area_3/MovingPlatform"]
+[editable path="Area_3/MovingPlatform2"]
+[editable path="Area_3/MovingPlatform3"]
+[editable path="Area_3/MovingPlatform4"]
+[editable path="Area_3/MovingPlatform5"]
+[editable path="Area_3/MovingPlatform6"]

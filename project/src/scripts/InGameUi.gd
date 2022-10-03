@@ -4,6 +4,8 @@ onready var scene_tree: = get_tree()
 onready var pause_overlay: ColorRect = get_node("PauseOverlay")
 
 onready var health_bar: ProgressBar = get_node("Control/HealthBar")
+onready var tutorial_text: Label = get_node("TutorialPanel/TutorialText")
+onready var tutorial_panel: Panel = get_node("TutorialPanel")
 
 
 var paused : =false setget set_paused
@@ -37,3 +39,15 @@ func _on_continue_button_up():
 func _on_restart_button_up():
 	get_tree().reload_current_scene()
 	self.paused = false
+
+
+
+func show_tutorial_text(input_text):
+	tutorial_panel.visible = true
+	tutorial_text.text = input_text
+	
+	
+
+func hide_tutorial_text():
+	tutorial_panel.visible = false
+	

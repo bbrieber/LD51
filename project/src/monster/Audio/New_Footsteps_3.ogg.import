@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/New_Footsteps_3.ogg-b1da44133ecba01476b3088bcf25520a.oggstr"
+
+[deps]
+
+source_file="res://src/monster/Audio/New_Footsteps_3.ogg"
+dest_files=[ "res://.import/New_Footsteps_3.ogg-b1da44133ecba01476b3088bcf25520a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

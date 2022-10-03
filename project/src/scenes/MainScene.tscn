@@ -1,17 +1,26 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/scenes/InGameUi.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Environment/BoxObstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Assets/Pill_Blue_20.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/tmp/Platform_3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Assets/Portal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/monster/Monster.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Assets/Pill_Red_50.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Assets/Pill_Green_100.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/tmp/Big_Rock_1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/tmp/Gras.material" type="Material" id=10]
+[ext_resource path="res://src/tmp/Big_Rock_2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/tmp/Big_Rock_3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/tmp/Big_Rock_4.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/tmp/Platform_1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/tmp/Platform_2.tscn" type="PackedScene" id=15]
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 30, 0.1, 30 )
 
 [sub_resource type="CubeMesh" id=2]
+material = ExtResource( 10 )
 size = Vector3( 60, 0.2, 60 )
 
 [node name="Root" type="Spatial"]
@@ -44,24 +53,92 @@ transform = Transform( 0.684025, 0, 0.729458, 0, 1, 0, -0.729458, 0, 0.684025, -
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8474, 0, 0 )
 
 [node name="Monster" parent="Spatial" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0153255, -4.76837e-07, 0.00311852 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0518, -4.76837e-07, -6.64574 )
 
 [node name="PickUps" type="Spatial" parent="Spatial"]
 
 [node name="Pill_Blue_20" parent="Spatial/PickUps" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619079, 4.08772, 7.9983 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47646, 6.41441, 15.248 )
 
 [node name="Pill_Red_50" parent="Spatial/PickUps" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67497, 0, 19.4355 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7889, 0, 18.7597 )
 
 [node name="Pill_Green_100" parent="Spatial/PickUps" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.676 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0048, 0, -3.11732 )
 
 [node name="Portal" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1.43123, 0, -1.58309, 0, 2.32586, 0, 0.741789, 0, 0.670634, 18.5197, 2.59876e-05, -12.647 )
+transform = Transform( 1.61201, 0, -0.00936697, 0, 2.32586, 0, 0.0087827, 0, 1.71925, -1.19525, 9.35744, -9.94567 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -0.735896, 0.677094, 0, -0.677094, -0.735896, 0, 14.1596, 0 )
 light_color = Color( 0.882353, 0.898039, 0.811765, 1 )
 light_energy = 0.113
 shadow_enabled = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Big_Rock_1" parent="Node" instance=ExtResource( 9 )]
+transform = Transform( 0.505829, 0, 2.95705, 0, 3, 0, -2.95705, 0, 0.505829, -14.9288, 0, 0 )
+
+[node name="Big_Rock_2" parent="Node" instance=ExtResource( 9 )]
+transform = Transform( -0.645586, 0, 2.92971, 0, 1.79403, 0, -2.56171, 0, -0.564494, -14.9288, 0, 8.07823 )
+
+[node name="Big_Rock_3" parent="Node" instance=ExtResource( 9 )]
+transform = Transform( 1.59311, 0, 1.18829, 0, 2.25605, 0, -1.144, 0, 1.86934, -12.6451, 0, 15.7547 )
+
+[node name="Big_Rock_4" parent="Node" instance=ExtResource( 9 )]
+transform = Transform( -1.29226, 0, -2.60228, 0, 2.88244, 0, 2.30417, 0, -1.45945, 0.0188325, 0, -16.581 )
+
+[node name="Big_Rock_5" parent="Node" instance=ExtResource( 9 )]
+transform = Transform( -0.645586, 0, 2.92971, 0, 1.79403, 0, -2.56171, 0, -0.564494, -7.46986, 0, -14.1688 )
+
+[node name="Big_Rock_6" parent="Node" instance=ExtResource( 9 )]
+transform = Transform( -1.1261, 0, -2.78063, 0, 3, 0, 2.78063, 0, -1.1261, -8.49759, -2.09332, -5.90526 )
+
+[node name="Big_Rock_7" parent="Node" instance=ExtResource( 11 )]
+transform = Transform( 1.83319, 0, 1.37355, 0, 2.29069, 0, -1.37355, 0, 1.83319, -12.4398, 0, 27.9556 )
+
+[node name="Big_Rock_8" parent="Node" instance=ExtResource( 11 )]
+transform = Transform( -0.291422, 0, 2.27207, 0, 1.73191, 0, -2.27207, 0, -0.291422, 1.05071, -3.8147e-06, 30.9601 )
+
+[node name="Big_Rock_9" parent="Node" instance=ExtResource( 12 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 13.6856, -0.644876, 35.9233 )
+
+[node name="Big_Rock_10" parent="Node" instance=ExtResource( 12 )]
+transform = Transform( -0.306319, 0, 3.98825, 0, 4, 0, -3.98825, 0, -0.306319, 29.1722, -0.644876, 19.5583 )
+
+[node name="Big_Rock_11" parent="Node" instance=ExtResource( 12 )]
+transform = Transform( -0.306319, 0, 3.98825, 0, 4, 0, -3.98825, 0, -0.306319, 33.4518, 1.44227, 4.13512 )
+
+[node name="Big_Rock_12" parent="Node" instance=ExtResource( 13 )]
+transform = Transform( 3.53652, 0, 0, 0, 3.53652, 0, 0, 0, 3.53652, 13.7226, 0, -23.3415 )
+
+[node name="Big_Rock_13" parent="Node" instance=ExtResource( 13 )]
+transform = Transform( -3.26805, 0, 1.3516, 0, 3.53652, 0, -1.3516, 0, -3.26805, 31.102, 3.8147e-06, -17.7679 )
+
+[node name="Platform_1" parent="Node" instance=ExtResource( 14 )]
+transform = Transform( 3.4, 0, 0, 0, 3.4, 0, 0, 0, 3.4, -5.52214, 3.65502, 0.192201 )
+
+[node name="Platform_3" parent="Node" instance=ExtResource( 14 )]
+transform = Transform( 1.33871, 0, -2.25016, 0, 2.61828, 0, 2.25016, 0, 1.33871, -2.18177, 6.90958, -2.77925 )
+
+[node name="Platform_4" parent="Node" instance=ExtResource( 14 )]
+transform = Transform( 0.193694, 0, -5.49181, 0, 3.7421, 0, 3.73708, 0, 0.284642, -1.03186, 9.20909, -8.44906 )
+
+[node name="Big_Rock_14" parent="Node" instance=ExtResource( 9 )]
+transform = Transform( 0.569185, 0, 0.201827, 0, 0.947727, 0, -0.201827, 0, 0.569185, -3.7919, 9.76698, -10.558 )
+
+[node name="Big_Rock_15" parent="Node" instance=ExtResource( 9 )]
+transform = Transform( 0.484117, 0, -0.361021, 0, 0.947727, 0, 0.361021, 0, 0.484117, 0.1769, 9.76698, -11.5803 )
+
+[node name="Platform_2" parent="Node" instance=ExtResource( 14 )]
+transform = Transform( 3.4, 0, 0, 0, 3.4, 0, 0, 0, 3.4, -6.38882, 1.65552, 7.12327 )
+
+[node name="Platform_5" parent="Node" instance=ExtResource( 4 )]
+transform = Transform( 2.71799, 0, 0, 0, 2.71799, 0, 0, 0, 2.71799, -6.27874, 4.22468, 14.0822 )
+
+[node name="Platform_6" parent="Node" instance=ExtResource( 4 )]
+transform = Transform( -2.55103, 0, -0.937937, 0, 1.80459, 0, 0.937937, 0, -2.55103, -7.09104, 2.24595, 21.1456 )
+
+[node name="Platform_7" parent="Node" instance=ExtResource( 15 )]
+transform = Transform( 4.01177, 0, 0, 0, 3.14441, 0, 0, 0, 4.01177, 3.66954, 5.11125, 14.6676 )

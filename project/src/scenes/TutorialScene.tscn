@@ -1,0 +1,262 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://src/scenes/InGameUi.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Assets/Gound.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Assets/Pill_Blue_20.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scenes/TutorialManager.gd" type="Script" id=4]
+[ext_resource path="res://src/Assets/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/monster/Monster.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Assets/Pill_Red_50.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Assets/Pill_Green_100.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/tmp/Big_Rock_2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/tmp/Big_Rock_3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/tmp/Big_Rock_4.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/tmp/Platform_2.tscn" type="PackedScene" id=15]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 4.13502, 5.73861, 2.58183 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 15.2751, 9.06769, 2.58183 )
+
+[node name="Root" type="Spatial"]
+
+[node name="InGameUi" parent="." instance=ExtResource( 1 )]
+
+[node name="Environment" type="Spatial" parent="."]
+
+[node name="Gound" parent="Environment" instance=ExtResource( 2 )]
+
+[node name="Gound2" parent="Environment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60 )
+
+[node name="Big_Rock_4" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( 3.76977, 0, 0, 0, 3.67659, 0, 0, 0, 3.76977, -3.08334, 1.86738, 33.1435 )
+
+[node name="Big_Rock_33" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( 1.94208, 0, 3.23102, 0, 3.67659, 0, -3.23102, 0, 1.94208, -66.9287, 1.86738, 56.7991 )
+
+[node name="Big_Rock_37" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( 7.34942, 0, 0.294723, 0, 3.67659, 0, -0.576346, 0, 3.75823, -89.6341, 1.86738, 70.2855 )
+
+[node name="Big_Rock_34" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( -3.11568, 0, 2.12219, 0, 3.67659, 0, -2.12219, 0, -3.11568, -73.9834, 6.28918, 0.419188 )
+
+[node name="Big_Rock_35" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( -3.07657, 0, -2.1785, 0, 3.67659, 0, 2.1785, 0, -3.07657, -114.56, -0.0239496, -53.6711 )
+
+[node name="Big_Rock_5" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( -2.49393, 0, 2.82692, 0, 3.9609, 0, -2.82692, 0, -2.49393, -20.4709, 1.86738, 21.2026 )
+
+[node name="Big_Rock_30" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( 0.911287, 0, 3.65796, 0, 3.9609, 0, -3.65796, 0, 0.911287, -57.1479, -3.67985, 34.9864 )
+
+[node name="Big_Rock_31" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( -3.23487, 0, 1.93565, 0, 3.9609, 0, -1.93565, 0, -3.23487, -131.387, -3.67984, 62.7788 )
+
+[node name="Big_Rock_36" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( -0.870627, 0, 3.66786, 0, 3.9609, 0, -3.66786, 0, -0.870627, -138.455, -3.67984, 21.2374 )
+
+[node name="Big_Rock_20" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( 2.80294, 0, 2.52085, 0, 3.9609, 0, -2.52085, 0, 2.80294, -68.1126, 1.86738, -73.0071 )
+
+[node name="Big_Rock_21" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( -3.7115, 0, 0.66025, 0, 3.9609, 0, -0.66025, 0, -3.7115, -15.2943, 1.86737, -72.3779 )
+
+[node name="Big_Rock_3" parent="Environment" instance=ExtResource( 12 )]
+transform = Transform( -0.700869, 0, 3.72886, 0, 3.79416, 0, -3.72886, 0, -0.700869, 21.9005, 0, 22.0191 )
+
+[node name="Big_Rock_6" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( 1.4131, 0, 3.4949, 0, 3.67659, 0, -3.4949, 0, 1.4131, -19.0141, 1.86737, -2.47768 )
+
+[node name="Big_Rock_19" parent="Environment" instance=ExtResource( 13 )]
+transform = Transform( 3.74109, 0, -0.464121, 0, 3.67659, 0, 0.464121, 0, 3.74109, -64.5532, 1.44071, -28.5315 )
+
+[node name="Big_Rock_7" parent="Environment" instance=ExtResource( 12 )]
+transform = Transform( -0.700869, 0, 3.72886, 0, 3.79416, 0, -3.72886, 0, -0.700869, 22.8539, 0, -10.7528 )
+
+[node name="Big_Rock_2" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 3.77853, 0, 0, 0, 2, 0, 0, 0, 3.77853, -13.0001, 0, -27.0775 )
+
+[node name="Big_Rock_8" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 3.77853, 0, 0, 0, 2, 0, 0, 0, 3.77853, 23.7325, 0.0348587, -33.0312 )
+
+[node name="Big_Rock_9" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 3.77853, 0, 0, 0, 1.96161, 0, 0, 0, 7.20608, 31.4507, 3.1758, 3.98219 )
+
+[node name="Big_Rock_10" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 0.118882, -0.356196, -7.08266, -0.0628607, 1.92851, -1.31268, 3.77614, 0.0433175, 0.201127, -9.8816, 3.51074, 37.0166 )
+
+[node name="Big_Rock_32" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 0.118882, -0.356196, -7.08266, -0.0628607, 1.92851, -1.31268, 3.77614, 0.0433175, 0.201127, -104.604, -4.26983, 69.3085 )
+
+[node name="Big_Rock_11" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 2.04525, 0, 6.05917, 0, 1.96161, 0, -3.17714, 0, 3.90053, 14.52, 3.1758, -60.965 )
+
+[node name="Big_Rock_12" parent="Environment" instance=ExtResource( 12 )]
+transform = Transform( -0.700869, 0, 3.72886, 0, 3.79416, 0, -3.72886, 0, -0.700869, 16.0181, -3.92072, -47.8331 )
+
+[node name="Gound3" parent="Environment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -60 )
+
+[node name="Gound6" parent="Environment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 0 )
+
+[node name="Gound4" parent="Environment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, -60 )
+
+[node name="Gound5" parent="Environment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 0 )
+
+[node name="Gound7" parent="Environment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 60 )
+
+[node name="Gound8" parent="Environment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 60 )
+
+[node name="Big_Rock_13" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 0.260222, 0, 7.18897, 0, 1.96161, 0, -3.76956, 0, 0.496272, -25.4421, 3.1758, -82.3918 )
+
+[node name="Big_Rock_14" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( -1.72382, 0, 6.41248, 0, 1.96161, 0, -3.36241, 0, -3.28751, -63.3588, 3.1758, -82.3918 )
+
+[node name="Big_Rock_17" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 0.260222, 0, 7.18897, -3.65182, -0.48644, 0.480771, 0.934775, -1.90034, -0.123065, -33.5212, 7.31929, -18.9693 )
+
+[node name="Big_Rock_23" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( -0.142018, 0, 7.20099, -0.0152214, 3.00052, -0.00109184, -3.77585, -0.00516972, -0.270843, -33.3012, 0.244871, -18.0648 )
+
+[node name="Big_Rock_22" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 0.713767, 0, 9.14146, 0, 1.30157, 0, -1.07892, 0, 6.04762, -100.67, -5.97038, -29.5262 )
+
+[node name="Big_Rock_18" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( -1.72382, 0, 6.41248, 0, 1.96161, 0, -3.36241, 0, -3.28751, -71.438, 1.08236, -18.9693 )
+
+[node name="Big_Rock_15" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 1.62152, 0, -6.5088, 0, 1.96161, 0, 3.41291, 0, 3.09242, -112.7, 3.17581, -61.8288 )
+
+[node name="Big_Rock_16" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 3.76523, 0, -0.604116, 0, 1.96161, 0, 0.31677, 0, 7.18071, -132.677, 3.17581, -32.0184 )
+
+[node name="Big_Rock_24" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 3.76523, 0, -0.604116, 0, 1.96161, 0, 0.31677, 0, 7.18071, -140.347, 3.17581, 11.4918 )
+
+[node name="Big_Rock_25" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 3.76523, 0, -0.604116, 0, 1.96161, 0, 0.31677, 0, 7.18071, -143.875, 3.17581, 53.4305 )
+
+[node name="Big_Rock_26" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( 0.478792, 0.051846, 7.14546, 0.0234588, 1.96084, -0.197716, -3.748, 0.018896, 0.911565, -114.544, 2.2171, 72.4367 )
+
+[node name="Big_Rock_27" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( -0.892905, 0.051846, 6.9994, 0.0589858, 1.96084, -0.168637, -3.67104, 0.018896, -1.70517, -69.6828, 1.01988, 73.585 )
+
+[node name="Big_Rock_28" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( -3.75604, 0.051846, 0.761639, 0.103153, 1.96084, 0.048914, -0.398532, 0.018896, -7.16555, -52.1759, 0.82408, 45.869 )
+
+[node name="Big_Rock_29" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( -3.43693, 0.051846, -2.98804, 0.0757634, 1.96084, 0.142183, 1.56814, 0.018896, -6.55584, -58.947, 1.39464, 5.24188 )
+
+[node name="Platform_2" parent="Environment" instance=ExtResource( 15 )]
+transform = Transform( 5, 0, 0, 0, 3, 0, 0, 0, 5, -95.7211, 2.7549, 22.7297 )
+
+[node name="Platform_3" parent="Environment" instance=ExtResource( 15 )]
+transform = Transform( 5, 0, 0, 0, 4.32976, 0, 0, 0, 5, -93.5713, 4.02194, 33.6081 )
+
+[node name="Platform_4" parent="Environment" instance=ExtResource( 15 )]
+transform = Transform( 0.492517, 0, 4.97568, 0, 4.32976, 0, -4.97568, 0, 0.492517, -90.9835, 6.1423, 45.1804 )
+
+[node name="Platform_5" parent="Environment" instance=ExtResource( 15 )]
+transform = Transform( 7.94574, 0, 0, 0, 4.30866, 0, 0, 0, 4.97564, -88.6248, 6.57934, 57.3113 )
+
+[node name="Portal" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1.60252, 0, -0.186511, 0, 2.32586, 0, 0.174877, 0, -1.70913, -88.4719, 7.09786, 60.4822 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.735896, 0.677094, 0, -0.677094, -0.735896, 0, 14.1596, 0 )
+light_color = Color( 0.882353, 0.898039, 0.811765, 1 )
+light_energy = 0.113
+shadow_enabled = true
+
+[node name="PickUps" type="Spatial" parent="."]
+
+[node name="Pill_Blue_20" parent="PickUps" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47646, 6.41441, 15.248 )
+
+[node name="Pill_Red_50" parent="PickUps" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -107.764, 1.17913, -34.0436 )
+
+[node name="Pill_Red_51" parent="PickUps" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -119.867, 1.51617, 21.9274 )
+
+[node name="Pill_Red_53" parent="PickUps" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -81.7447, 1.51617, 21.9274 )
+
+[node name="Pill_Red_54" parent="PickUps" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -116.826, 1.51617, 47.8357 )
+
+[node name="Pill_Red_52" parent="PickUps" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93.3986, 5.59961, 33.9375 )
+
+[node name="Pill_Red_55" parent="PickUps" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.3582, 7.41286, 45.6453 )
+
+[node name="Pill_Green_100" parent="PickUps" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.2142, 0, -39.4852 )
+health_amount = 100
+
+[node name="Monster" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203406, -4.76837e-07, 12.2045 )
+
+[node name="TutorialManager" type="Node" parent="."]
+script = ExtResource( 4 )
+welcome_text = "Casimir feels sick and needs to find his bed help him to find it.
+
+Use the W,A,S,D keys to move Casimir.
+
+Use the Mouse to look around."
+medicine_text = "Casimir needs some medicine one his way, or he might fall asleep.
+
+Try to pick up the pill over there to cure him.."
+jump_text = "There is an obstacle in the way.
+
+Press  SPACE to jump over it."
+door_text = "This door up there  looks like the door to casimirs bed room try to reach it."
+last_text = "Yeah you did it.
+You might need to find more doors to find the way to your bedroom"
+
+[node name="Medicine_Trigger" type="Area" parent="TutorialManager"]
+transform = Transform( -0.634191, 0, 0.773177, 0, 1, 0, -0.773177, 0, -0.634191, -86.4548, -1.06719, -43.0474 )
+collision_layer = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="TutorialManager/Medicine_Trigger"]
+transform = Transform( 0.999844, 0.00703051, 0.0162274, -0.00710042, 0.999966, 0.00425379, -0.016197, -0.00436836, 0.999859, 4.53769, 3.18479, 7.2165 )
+shape = SubResource( 1 )
+
+[node name="Door_Trigger" type="Area" parent="TutorialManager"]
+transform = Transform( -0.999925, 0, -0.0122169, 0, 1, 0, 0.0122169, 0, -0.999925, -115.046, -1.06719, -1.48812 )
+collision_layer = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="TutorialManager/Door_Trigger"]
+transform = Transform( 0.999844, 0.00703051, 0.0162274, -0.00710042, 0.999966, 0.00425379, -0.016197, -0.00436836, 0.99986, -1.30965, 1.56214, 4.69098 )
+shape = SubResource( 2 )
+
+[node name="Door_Trigger2" type="Area" parent="TutorialManager"]
+transform = Transform( -0.999925, 0, -0.0122169, 0, 1, 0, 0.0122169, 0, -0.999925, -89.8388, 8.99858, 57.3962 )
+collision_layer = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="TutorialManager/Door_Trigger2"]
+transform = Transform( 0.999844, 0.00703051, 0.0162275, -0.00710042, 0.999966, 0.00425379, -0.016197, -0.00436836, 0.99986, -1.39613, 3.03977, 0.135181 )
+shape = SubResource( 1 )
+
+[node name="Medicine_Trigger2" type="Area" parent="TutorialManager"]
+transform = Transform( 0.22274, 0, 0.974878, 0, 1, 0, -0.974878, 0, 0.22274, -9.63471, -1.06719, -47.9881 )
+collision_layer = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="TutorialManager/Medicine_Trigger2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42297, 3.15472, 0.148323 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="TutorialManager/Medicine_Trigger" to="TutorialManager" method="_on_jump_trigger_entered"]
+[connection signal="body_entered" from="TutorialManager/Door_Trigger" to="TutorialManager" method="_on_door_trigger_entered"]
+[connection signal="body_entered" from="TutorialManager/Door_Trigger2" to="TutorialManager" method="_on_last_trigger_entered"]
+[connection signal="body_entered" from="TutorialManager/Medicine_Trigger2" to="TutorialManager" method="_on_medicine_trigger_entered"]

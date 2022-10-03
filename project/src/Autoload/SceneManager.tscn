@@ -7,4 +7,4 @@ script = ExtResource( 1 )
 path_to_menu_scene = "res://src/scenes/MainMenu.tscn"
 path_to_win_scene = "res://src/scenes/WinScene.tscn"
 path_to_die_scene = "res://src/scenes/DeathScene.tscn"
-path_to_levels_array = [ "res://src/scenes/MainScene.tscn", "res://src/scenes/MainScene2.tscn" ]
+path_to_levels_array = [ "res://src/scenes/TutorialScene.tscn", "res://src/scenes/RunScene.tscn", "res://src/scenes/CloudLevel.tscn", "res://src/scenes/LastScene.tscn" ]

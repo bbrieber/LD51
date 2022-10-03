@@ -62,4 +62,8 @@ autoplay = "Spin"
 anims/RESET = SubResource( 3 )
 anims/Spin = SubResource( 4 )
 
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04293, 0 )
+light_color = Color( 0.87451, 0.917647, 0.717647, 1 )
+
 [connection signal="body_entered" from="Area" to="." method="on_pickup"]

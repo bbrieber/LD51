@@ -1,0 +1,215 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v3.1.113183908)"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 264,
+            "type": "VEC3",
+            "max": [
+                2.074383020401001,
+                2.031919002532959,
+                1.08568274974823
+            ],
+            "min": [
+                -2.3737356662750246,
+                -3.665069103240967,
+                -1.7104334831237794
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 264,
+            "type": "VEC3",
+            "max": [
+                0.9968795776367188,
+                0.9997669458389282,
+                0.9994585514068604
+            ],
+            "min": [
+                -0.9978083968162537,
+                -0.999699056148529,
+                -0.9980513453483582
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 264,
+            "type": "VEC4",
+            "max": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -0.9990996718406677,
+                -0.9999732971191406,
+                -0.9999151825904846,
+                -0.9990996718406677
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 264,
+            "type": "VEC2",
+            "max": [
+                0.9999976754188538,
+                0.9999977350234985
+            ],
+            "min": [
+                0.0000022724270820617677,
+                0.051406025886535647
+            ]
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 1308,
+            "type": "SCALAR",
+            "max": [
+                263.0
+            ],
+            "min": [
+                0.0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 15288,
+            "uri": "Clouds.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 3168,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 3168,
+            "byteLength": 3168,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 6336,
+            "byteLength": 4224,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 10560,
+            "byteLength": 2112,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 12672,
+            "byteLength": 2616,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "DefaultMaterial",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    1.0
+                ],
+                "metallicFactor": 0.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Cloud_LP",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 4,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TANGENT": 2,
+                        "TEXCOORD_0": 3
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "RootNode",
+            "matrix": [
+                0.009999999776482582,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.009999999776482582,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.009999999776482582,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "Cloud_LP",
+            "matrix": [
+                100.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.000016292067812173629,
+                -100.0,
+                0.0,
+                0.0,
+                100.0,
+                -0.000016292067812173629,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "mesh": 0
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}
