@@ -21,6 +21,7 @@ size = Vector3( 60, 0.2, 60 )
 [node name="Spatial" type="Spatial" parent="."]
 
 [node name="StaticBody" type="StaticBody" parent="Spatial"]
+collision_layer = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Spatial/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
@@ -43,7 +44,7 @@ transform = Transform( 0.684025, 0, 0.729458, 0, 1, 0, -0.729458, 0, 0.684025, -
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8474, 0, 0 )
 
 [node name="Monster" parent="Spatial" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0153255, -4.76837e-07, 0.00311852 )
 
 [node name="PickUps" type="Spatial" parent="Spatial"]
 

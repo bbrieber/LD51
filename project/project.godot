@@ -10,9 +10,9 @@ config_version=4
 
 [application]
 
-config/name="LD51"
+config/name="Cure Casimir"
 run/main_scene="res://src/scenes/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://icon/icon.png"
 
 [autoload]
 
@@ -20,6 +20,11 @@ MusicManager="*res://src/Autoload/MusicManager.tscn"
 PlayerData="*res://src/Autoload/PlayerData.tscn"
 TimerManager="*res://src/Autoload/TimerManager.tscn"
 SceneManager="*res://src/Autoload/SceneManager.tscn"
+
+[display]
+
+window/size/width=948
+window/size/height=533
 
 [gui]
 

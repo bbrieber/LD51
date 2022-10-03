@@ -46,5 +46,6 @@ func load_next_level() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	current_level += 1;
+	print(path_to_levels_array[current_level])
 	get_tree().change_scene(path_to_levels_array[current_level])
 	
